@@ -1,0 +1,200 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+:root {
+  --primary: #3f51b5;
+  --primary-light: #6573c3;
+  --accent: #4caf50;
+  --bg-light: #f5f7fa;
+  --text-dark: #212121;
+  --text-light: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 20px;
+  /* pentru butoane fixate jos */
+  padding-bottom: 100px;
+}
+
+/* MENU */
+.menu {
+  text-align: center;
+}
+
+.menu h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.menu-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.menu-buttons .btn,
+.timed-form .btn {
+  background: var(--primary);
+  color: var(--text-light);
+  border: none;
+  padding: 14px 28px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-decoration: none;
+}
+
+.menu-buttons .btn:hover,
+.timed-form .btn:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.timed-form {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.timed-form input[type="number"] {
+  width: 60px;
+  padding: 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* QUIZ */
+#timer {
+  display: inline-block;
+  background: var(--accent);
+  color: var(--text-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 500;
+  margin-bottom: 15px;
+  float: right;
+}
+
+/* bara de progres */
+.progress {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 8px;
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: background 0.2s, padding-left 0.2s;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.options label:hover {
+  background: rgba(63,81,181,0.05);
+  padding-left: 12px;
+}
+
+.options input[type="checkbox"] {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+}
+
+/* Navigation buttons fixate jos */
+.nav-buttons {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-light);
+  padding: 10px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  gap: 20px;
+}
+
+.nav-buttons button {
+  background: var(--primary);
+  color: var(--text-light);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-buttons button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.nav-buttons button:hover:not(:disabled) {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+}
+
+/* RESULTS */
+.container h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.container ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+.container ul li {
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}

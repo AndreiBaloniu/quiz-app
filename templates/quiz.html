@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Quiz Securitate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Quiz Securitate</h1>
+    {% if timed %}
+    <div id="timer">{{ minutes }}:00</div>
+    {% endif %}
+    <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- conținutul întrebării -->
+    <div id="quiz" class="card"></div>
+
+    <!-- butoane fixate jos -->
+    <div class="nav-buttons">
+        <button id="prevBtn">Înapoi</button>
+        <button id="nextBtn">Următoarea</button>
+    </div>
+</div>
+
+<script>
+    const questions = {{ questions|tojson }};
+    const TOTAL     = {{ total }};
+    const TIMED     = {{ 'true' if timed else 'false' }};
+    const DURATION_MIN = {{ minutes if minutes else 'null' }};
+</script>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
