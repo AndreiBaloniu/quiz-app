@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Toate Răspunsurile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+    <h1>Toate Întrebările și Răspunsurile Corecte</h1>
+    <a href="/" class="back-button">Înapoi la meniu</a>
+    <div class="all-answers">
+        {% for q in questions %}
+        <div class="card">
+            <p><strong>{{ loop.index }}. {{ q.question }}</strong></p>
+            <div class="options">
+                {% for key, text in q.options.items() %}
+                <div class="option {% if key in q.correct %}correct{% endif %}">
+                    ({{ key }}) {{ text }}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>
